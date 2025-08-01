@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 MenuGlob="*res://main/menu/menu_glob.gd"
 UiGlob="*res://main/ui/ui_glob.gd"
 MapGlob="*res://main/map/map_glob.gd"
+ProgressGlob="*res://main/progress/progress_glob.gd"
+Glob="*res://main/glob.gd"
 
 [display]
 

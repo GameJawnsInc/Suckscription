@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://f44se8uopbn2"]
+
+[ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="1_oxbto"]
+[ext_resource type="Script" uid="uid://cvv1b7bseaw2a" path="res://main/map/overworld/house_priority.gd" id="1_qnh2q"]
+[ext_resource type="PackedScene" uid="uid://ccaxx8d4y6wvp" path="res://main/ui/nine_patch_button/nine_patch_button.tscn" id="2_qnh2q"]
+
+[node name="HousePriority" type="HBoxContainer"]
+size_flags_horizontal = 4
+script = ExtResource("1_qnh2q")
+
+[node name="NinePatchPanel" parent="." instance=ExtResource("1_oxbto")]
+custom_minimum_size = Vector2(600, 60)
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="HouseLabel" type="RichTextLabel" parent="NinePatchPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="NinePatchButton" parent="CenterContainer/Control" instance=ExtResource("2_qnh2q")]
+custom_minimum_size = Vector2(140, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -30.0
+offset_right = 70.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(70, 30)
+text = "UP"
+color_choice = 6
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CenterContainer2"]
+layout_mode = 2
+
+[node name="NinePatchButton2" parent="CenterContainer2/Control" instance=ExtResource("2_qnh2q")]
+custom_minimum_size = Vector2(140, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -30.0
+offset_right = 70.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(70, 30)
+text = "DOWN"
+color_choice = 5
