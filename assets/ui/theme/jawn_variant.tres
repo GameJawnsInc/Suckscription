@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://cnbgb8uri6rfk"]
+
+[ext_resource type="FontFile" uid="uid://b8r7a65uuqja4" path="res://assets/ui/theme/Jawnfontv3.otf" id="1_uhbty"]
+
+[resource]
+base_font = ExtResource("1_uhbty")
+baseline_offset = 0.095

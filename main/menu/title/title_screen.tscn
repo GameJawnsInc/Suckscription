@@ -1,0 +1,126 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvjadpj1h5dtl"]
+
+[ext_resource type="Script" uid="uid://b815ltoes0kww" path="res://main/menu/title/title_screen.gd" id="1_tlab8"]
+[ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="2_6whqj"]
+[ext_resource type="PackedScene" uid="uid://ccaxx8d4y6wvp" path="res://main/ui/nine_patch_button/nine_patch_button.tscn" id="3_q1id0"]
+
+[node name="TitleScreen" type="Control" node_paths=PackedStringArray("buttons")]
+custom_minimum_size = Vector2(1408, 792)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1408.0
+offset_bottom = 792.0
+script = ExtResource("1_tlab8")
+buttons = [NodePath("VBoxContainer/CenterContainer/Control/NewGameButton"), NodePath("VBoxContainer/CenterContainer2/Control/QuitButton")]
+
+[node name="NinePatchPanel" parent="." instance=ExtResource("2_6whqj")]
+custom_minimum_size = Vector2(1412, 802)
+layout_mode = 0
+offset_left = -3.0
+offset_top = -5.0
+offset_right = 1412.0
+offset_bottom = 797.0
+color_choice = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NinePatchPanel" parent="NinePatchPanel/MarginContainer" instance=ExtResource("2_6whqj")]
+layout_mode = 2
+color_choice = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="NinePatchPanel" parent="VBoxContainer" instance=ExtResource("2_6whqj")]
+custom_minimum_size = Vector2(800, 240)
+layout_mode = 2
+size_flags_horizontal = 4
+color_choice = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 120
+text = "Suckscription"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(388.32, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Control" type="Control" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="NewGameButton" parent="VBoxContainer/CenterContainer/Control" instance=ExtResource("3_q1id0")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(388.32, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.16
+offset_top = -60.0
+offset_right = 194.16
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(194, 60)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "NEW GAME"
+color_choice = 5
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(388.32, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Control" type="Control" parent="VBoxContainer/CenterContainer2"]
+layout_mode = 2
+
+[node name="QuitButton" parent="VBoxContainer/CenterContainer2/Control" instance=ExtResource("3_q1id0")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(388.32, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.16
+offset_top = -60.0
+offset_right = 194.16
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(194, 60)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "QUIT GAME"
+color_choice = 5
+
+[connection signal="pressed" from="VBoxContainer/CenterContainer/Control/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer2/Control/QuitButton" to="." method="_on_quit_button_pressed"]

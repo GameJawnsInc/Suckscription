@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bgbbc88jwl5gw"]
+
+[ext_resource type="FontVariation" uid="uid://cnbgb8uri6rfk" path="res://assets/ui/theme/jawn_variant.tres" id="1_cwugr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a087v"]
+bg_color = Color(0.184314, 0.184314, 0.184314, 0.376471)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwugr"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(4.81308e-06, 0.949167, 0.571275, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1iiy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_skoc4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dltl"]
+
+[resource]
+default_font = ExtResource("1_cwugr")
+default_font_size = 36
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 12
+Button/styles/disabled = SubResource("StyleBoxFlat_a087v")
+Button/styles/focus = SubResource("StyleBoxFlat_cwugr")
+Button/styles/hover = SubResource("StyleBoxEmpty_c1iiy")
+Button/styles/normal = SubResource("StyleBoxEmpty_skoc4")
+Button/styles/pressed = SubResource("StyleBoxEmpty_0dltl")
+RichTextLabel/constants/outline_size = 12

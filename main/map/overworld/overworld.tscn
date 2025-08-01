@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctwns2ijplrrh"]
+
+[ext_resource type="Script" uid="uid://bdtnoj55ox1e" path="res://main/map/overworld/overworld.gd" id="1_oh3n5"]
+[ext_resource type="Texture2D" uid="uid://dc6bf8uif06kd" path="res://assets/overworld/road.png" id="2_7cv3s"]
+[ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="3_7cv3s"]
+
+[node name="Overworld" type="Node2D"]
+script = ExtResource("1_oh3n5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1408, 792)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1408.0
+offset_bottom = 792.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(0.560784, 0.796078, 0.607843, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-101, 45)
+texture = ExtResource("2_7cv3s")
+offset = Vector2(704, 396)
+
+[node name="HouseLocations" type="Node2D" parent="Sprite2D"]
+unique_name_in_owner = true
+position = Vector2(101, 0)
+
+[node name="h1" type="Node2D" parent="Sprite2D/HouseLocations"]
+position = Vector2(157, 249)
+
+[node name="h2" type="Node2D" parent="Sprite2D/HouseLocations"]
+position = Vector2(494, 98)
+
+[node name="h3" type="Node2D" parent="Sprite2D/HouseLocations"]
+position = Vector2(884, 77)
+
+[node name="h4" type="Node2D" parent="Sprite2D/HouseLocations"]
+position = Vector2(1247, 365)
+
+[node name="h5" type="Node2D" parent="Sprite2D/HouseLocations"]
+position = Vector2(1202, 625)
+
+[node name="h6" type="Node2D" parent="Sprite2D/HouseLocations"]
+position = Vector2(899, 398)
+
+[node name="h7" type="Node2D" parent="Sprite2D/HouseLocations"]
+position = Vector2(596, 386)
+
+[node name="h8" type="Node2D" parent="Sprite2D/HouseLocations"]
+position = Vector2(756, 640)
+
+[node name="h9" type="Node2D" parent="Sprite2D/HouseLocations"]
+position = Vector2(327, 620)
+
+[node name="HoverNode" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(448, 236)
+
+[node name="NinePatchPanel" parent="HoverNode" instance=ExtResource("3_7cv3s")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.5
+offset_top = -83.5
+offset_right = 151.5
+offset_bottom = 83.5
+grow_horizontal = 2
+grow_vertical = 2
+color_choice = 6
+
+[node name="HoverLabel" type="RichTextLabel" parent="HoverNode/NinePatchPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 68
+text = "ASD"
+horizontal_alignment = 1
+vertical_alignment = 1

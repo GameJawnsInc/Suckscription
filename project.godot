@@ -1,0 +1,33 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Suckscription"
+run/main_scene="uid://dvdkg4vitku45"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+MenuGlob="*res://main/menu/menu_glob.gd"
+UiGlob="*res://main/ui/ui_glob.gd"
+MapGlob="*res://main/map/map_glob.gd"
+
+[display]
+
+window/size/viewport_width=1408
+window/size/viewport_height=792
+window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom="uid://bgbbc88jwl5gw"
+theme/custom_font="uid://cnbgb8uri6rfk"

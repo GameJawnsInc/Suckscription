@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccaxx8d4y6wvp"]
+
+[ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="1_d8od1"]
+[ext_resource type="Script" uid="uid://b5hs0qdl8rk88" path="res://main/ui/nine_patch_button/nine_patch_button.gd" id="1_jcgie"]
+
+[node name="NinePatchButton" type="Button" node_paths=PackedStringArray("panel")]
+custom_minimum_size = Vector2(80, 40)
+offset_right = 190.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 36
+text = "LETS GO"
+autowrap_mode = 3
+script = ExtResource("1_jcgie")
+panel = NodePath("NinePatchPanel")
+
+[node name="NinePatchPanel" parent="." instance=ExtResource("1_d8od1")]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
