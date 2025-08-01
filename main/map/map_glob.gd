@@ -10,5 +10,5 @@ func get_overworld_inst() -> Overworld:
 
 func get_house_inst(house_id: int) -> OverworldHouse:
 	var inst := OverworldHouseScene.instantiate()
-	inst.house_id = house_id
+	inst.house = HouseGlob.find_house_by_id(house_id)
 	return inst

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://uvluf0djouj5"]
+
+[ext_resource type="Script" uid="uid://cojd2cxjwrh8j" path="res://main/map/overworld/overworld_path_point_info.gd" id="1_ivu2x"]
+
+[node name="OverworldPathPointInfo" type="Node2D"]
+script = ExtResource("1_ivu2x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+mouse_filter = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

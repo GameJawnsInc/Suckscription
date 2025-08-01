@@ -12,6 +12,8 @@ signal finished
 func _on_new_game_button_pressed() -> void:
 	disable_buttons()
 	await new_game_button.pressed_animation_finished
+	Glob.main.show_transition()
+	await Glob.main.transition_shown
 	finished.emit()
 	queue_free()
 

@@ -1,10 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctwns2ijplrrh"]
+[gd_scene load_steps=11 format=3 uid="uid://ctwns2ijplrrh"]
 
 [ext_resource type="Script" uid="uid://bdtnoj55ox1e" path="res://main/map/overworld/overworld.gd" id="1_oh3n5"]
 [ext_resource type="Texture2D" uid="uid://dc6bf8uif06kd" path="res://assets/overworld/road.png" id="2_7cv3s"]
 [ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="3_7cv3s"]
+[ext_resource type="Script" uid="uid://no8cuhtmmrdl" path="res://main/map/overworld/path_line.gd" id="4_nlnpo"]
 [ext_resource type="PackedScene" uid="uid://ccaxx8d4y6wvp" path="res://main/ui/nine_patch_button/nine_patch_button.tscn" id="4_w6wjv"]
-[ext_resource type="PackedScene" uid="uid://f44se8uopbn2" path="res://main/map/overworld/house_priority.tscn" id="5_0bti1"]
+[ext_resource type="Script" uid="uid://crb0u8qnkbfst" path="res://main/map/overworld/house_priority_holder.gd" id="5_0bti1"]
+[ext_resource type="Script" uid="uid://l1p4rycssywy" path="res://main/map/overworld/character_body_2d.gd" id="7_fx160"]
+[ext_resource type="Script" uid="uid://c8wsix5is55x1" path="res://main/map/overworld/navigation_agent_2d.gd" id="7_lq383"]
+[ext_resource type="Texture2D" uid="uid://c74jcs4rogoql" path="res://icon.svg" id="9_u8st8"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fx160"]
+vertices = PackedVector2Array(714.391, 259.242, 727.133, 338.578, 727.07, 338.211, 921.289, 199.211, 918.156, 186.141, 913.617, 140.938, 1052.1, 183.953, 1014.84, 239.719, 957.219, 246.367, 1253.06, 485.117, 1273.67, 591.297, 1212.24, 512.977, 1183.24, 383.523, 1194.93, 591.969, 1246.37, 672.258, 737.867, 426.633, 661.047, 367.25, 639.203, 256.969, 675.938, 186.992, 655.93, 475.672, 723.453, 500.68, 690.344, 563.977, 857.141, 128.75, 779.711, 164.844, 720.938, 118.023, 584.352, 204.312, 549.891, 130.469, 632.398, 555.492, 621.406, 672.602, 608, 609.594, 545.062, 654.078, 1297.9, 383.211, 1297.05, 448.273, 1240.91, 364.531, 1196.7, 305.922, 1102.42, 284.039, 861.07, 81.5625, 922.383, 91.2812, 523.773, 75.2188, 502.93, 197.883, 423.844, 148.094, 425.742, 78.6562, 1144.64, 626.953, 1177.84, 732.344, 1010.43, 748, 1076.17, 651.852, 966.906, 661.219, 725.359, 751.992, 882.062, 684.594, 908.109, 282.383, 872.328, 234.32, 835.688, 335.578, 871.219, 357.211, 821.844, 411.789, 862.008, 451.398, 805.109, 507.219, 859.953, 547.289, 815.617, 586.508, 840.867, 626.727, 899.508, 625.344, 886.641, 672.5, 433.359, 218.648, 314.938, 206.148, 318.992, 274.32, 213.438, 304.461, 229.828, 334.422, 125, 393.141, 165.477, 250.25, 131.898, 356.672, 134.461, 544.297, -47.25, 481.773, -49.7109, 413.008, 73.3828, 386.5, 125, 447.703, 119.922, 271.867, 246.57, 657.422, 215.758, 485.07, 293.523, 525.43, 335.07, 559.062, 425.25, 725.156, 432.25, 623.859, 501.867, 652.953, 627.008, 682.93, 792.922, 690.023, 715.547, 683.992)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 11, 10, 14), PackedInt32Array(0, 2, 15, 16, 17, 18), PackedInt32Array(19, 16, 15, 20, 21), PackedInt32Array(22, 5, 4, 23, 24), PackedInt32Array(18, 17, 25, 26), PackedInt32Array(27, 19, 21, 28), PackedInt32Array(29, 27, 28), PackedInt32Array(30, 29, 28), PackedInt32Array(31, 32, 9, 12, 33), PackedInt32Array(34, 33, 12, 35, 6), PackedInt32Array(6, 35, 7), PackedInt32Array(22, 36, 37, 5), PackedInt32Array(24, 23, 18, 26), PackedInt32Array(38, 26, 25, 39, 40, 41), PackedInt32Array(42, 13, 14, 43, 44), PackedInt32Array(45, 42, 44), PackedInt32Array(46, 45, 44, 47, 48), PackedInt32Array(3, 8, 49, 50), PackedInt32Array(51, 50, 49, 52, 53), PackedInt32Array(53, 52, 54, 55), PackedInt32Array(55, 54, 56, 57), PackedInt32Array(58, 57, 56, 59, 60), PackedInt32Array(60, 59, 46), PackedInt32Array(40, 39, 61, 62), PackedInt32Array(62, 61, 63, 64), PackedInt32Array(64, 63, 65, 66), PackedInt32Array(67, 64, 66, 68), PackedInt32Array(69, 70, 71, 72, 73), PackedInt32Array(68, 74, 67), PackedInt32Array(72, 68, 66), PackedInt32Array(72, 66, 73), PackedInt32Array(75, 69, 73, 76, 77, 78, 79), PackedInt32Array(79, 78, 80), PackedInt32Array(79, 80, 81, 47), PackedInt32Array(47, 81, 30, 82), PackedInt32Array(48, 60, 46), PackedInt32Array(83, 48, 47), PackedInt32Array(84, 83, 47, 82), PackedInt32Array(82, 30, 28)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-60, 405, 70, 377, 121, 351, 109, 266, 168, 238, 214, 290, 309, 198, 414, 142, 416, 69, 530, 65, 556, 120, 721, 108, 848, 118, 852, 70, 934, 83, 925, 134, 1057, 175, 1204, 299, 1247, 356, 1308, 376, 1307, 453, 1264, 489, 1284, 592, 1255, 678, 1182, 742, 1011, 758, 725, 762, 423, 735, 241, 666, 129, 553, -57, 489)])
+source_geometry_mode = 1
 
 [node name="Overworld" type="Node2D"]
 script = ExtResource("1_oh3n5")
@@ -73,6 +83,45 @@ size_flags_horizontal = 3
 text = "PRIORITY"
 color_choice = 2
 
+[node name="MarginContainer2" type="MarginContainer" parent="Control"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+offset_right = 245.0
+offset_bottom = 100.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer2"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="CenterContainer2" type="CenterContainer" parent="Control/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="Control/MarginContainer2/HBoxContainer/CenterContainer2"]
+layout_mode = 2
+
+[node name="StartDayButton" parent="Control/MarginContainer2/HBoxContainer/CenterContainer2/Control" instance=ExtResource("4_w6wjv")]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -40.0
+offset_right = 124.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 40)
+size_flags_horizontal = 3
+text = "START DAY"
+color_choice = 10
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-101, 45)
 texture = ExtResource("2_7cv3s")
@@ -109,8 +158,25 @@ position = Vector2(756, 640)
 [node name="h9" type="Node2D" parent="Sprite2D/HouseLocations"]
 position = Vector2(327, 620)
 
+[node name="PathLine" type="Line2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-3, -3)
+scale = Vector2(1.02671, 1)
+points = PackedVector2Array(168.499, 291, 485.045, 145, 581.469, 455, 873.665, 441, 865.873, 145, 1209.69, 412, 1173.65, 665, 737.307, 686, 323.363, 661)
+width = 4.0
+default_color = Color(1, 0, 0.0901961, 0.517647)
+texture_mode = 2
+joint_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
+sharp_limit = 20.0
+round_precision = 23
+antialiased = true
+script = ExtResource("4_nlnpo")
+
 [node name="HoverNode" type="Node2D" parent="."]
 unique_name_in_owner = true
+visible = false
 position = Vector2(448, 236)
 
 [node name="NinePatchPanel" parent="HoverNode" instance=ExtResource("3_7cv3s")]
@@ -119,16 +185,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -151.5
-offset_top = -83.5
-offset_right = 151.5
-offset_bottom = 83.5
+offset_left = -151.0
+offset_top = -83.0
+offset_right = 227.0
+offset_bottom = 92.0
 grow_horizontal = 2
 grow_vertical = 2
 color_choice = 6
 
-[node name="HoverLabel" type="RichTextLabel" parent="HoverNode/NinePatchPanel"]
-unique_name_in_owner = true
+[node name="MarginContainer" type="MarginContainer" parent="HoverNode/NinePatchPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,14 +201,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HoverNode/NinePatchPanel/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HoverLabel" type="RichTextLabel" parent="HoverNode/NinePatchPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+mouse_filter = 2
 theme_override_constants/outline_size = 20
-theme_override_font_sizes/normal_font_size = 68
+theme_override_font_sizes/normal_font_size = 42
 text = "ASD"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HoverLabel2" type="RichTextLabel" parent="HoverNode/NinePatchPanel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 48
+text = "Elderly"
+fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Popup" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(1408, 792)
 layout_mode = 3
 anchors_preset = 0
@@ -194,9 +287,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
-
-[node name="HousePriority" parent="Popup/NinePatchPanel/MarginContainer/VBoxContainer/HousePriorityHolder" instance=ExtResource("5_0bti1")]
-layout_mode = 2
+script = ExtResource("5_0bti1")
 
 [node name="Control" type="Control" parent="Popup/NinePatchPanel"]
 anchors_preset = 0
@@ -220,5 +311,32 @@ pivot_offset = Vector2(80, 40)
 text = "CLOSE"
 color_choice = 3
 
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(84, 441)
+script = ExtResource("7_fx160")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterBody2D"]
+debug_enabled = true
+script = ExtResource("7_lq383")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_u8st8")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_fx160")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D" groups=["navigation_polygon_source_geometry_group"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NavigationRegion2D/StaticBody2D"]
+polygon = PackedVector2Array(437, 228, 324, 283, 235, 343, 135, 399, 135, 441, 220, 476, 299, 517, 341, 551, 437, 615, 504, 643, 542, 644, 600, 603, 623, 552, 646, 474, 651, 368, 630, 262, 580, 214, 504, 208)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="NavigationRegion2D/StaticBody2D"]
+polygon = PackedVector2Array(961, 256, 916, 289, 881, 360, 872, 452, 870, 545, 907, 618, 969, 651, 1074, 642, 1140, 618, 1186, 586, 1202, 513, 1174, 388, 1096, 292, 1013, 250)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="NavigationRegion2D/StaticBody2D"]
+polygon = PackedVector2Array(691, 194, 724, 256, 737, 337, 748, 427, 733, 504, 699, 569, 633, 673, 716, 674, 793, 680, 875, 675, 833, 633, 806, 590, 795, 507, 812, 410, 826, 333, 864, 228, 910, 195, 780, 175)
+
 [connection signal="pressed_animation_finished" from="Control/MarginContainer/HBoxContainer/CenterContainer2/Control/PriorityButton" to="." method="_on_priority_button_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="Control/MarginContainer2/HBoxContainer/CenterContainer2/Control/StartDayButton" to="." method="_on_start_day_button_pressed_animation_finished"]
 [connection signal="pressed_animation_finished" from="Popup/NinePatchPanel/Control/ClosePopup" to="." method="_on_close_popup_pressed_animation_finished"]
