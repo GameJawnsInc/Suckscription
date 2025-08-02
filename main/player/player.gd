@@ -5,9 +5,9 @@ class_name PlayerBody extends CharacterBody2D
 
 var move_direction: Vector2
 
-var acceleration: float = 360.0
+var acceleration: float = 1200.0
 var braking_power: float = 800.0
-var max_speed: float = 80.0
+var max_speed: float = 140.0
 
 var is_movement_disabled: bool = false
 

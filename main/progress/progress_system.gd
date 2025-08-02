@@ -3,8 +3,6 @@ class_name ProgressSystem extends Node2D
 
 signal times_up
 
-const DayLength = 180
-
 var current_day: int
 var day_time: float
 

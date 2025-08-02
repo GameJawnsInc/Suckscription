@@ -87,11 +87,11 @@ func draw_path() -> void:
 
 
 func _on_start_day_button_pressed_animation_finished() -> void:
+	Glob.main.show_transition()
+	await Glob.main.transition_shown
 	day_started.emit()
 
 func add_player(player_inst: PlayerBody) -> void:
-	Glob.main.show_transition()
-	await Glob.main.transition_shown
 	disconnect_houses_from_popup()
 	hover_node.visible = false
 	path_line.visible = false

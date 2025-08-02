@@ -1,7 +1,7 @@
 extends Node
 
 
-const DayLength = 20.0
+const DayLength = 22.5
 
 const ClockScene = preload("clock.tscn")
 

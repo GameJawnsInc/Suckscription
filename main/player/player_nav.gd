@@ -14,4 +14,7 @@ func _physics_process(delta: float) -> void:
 			get_parent().move_direction = unnormal.normalized()
 		else:
 			current_follow_target = Vector2.ZERO
-			follow_target_reached.emit()
+			get_parent().velocity /= 100.0
+			await Glob.new_timer_timeout(self, 0.5)
+			if !get_parent().is_movement_disabled:
+				follow_target_reached.emit()
