@@ -7,7 +7,8 @@ signal go_pressed
 const PointInfoScene = preload("overworld_path_point_info.tscn")
 const MoveArrowScene = preload("move_arrow.tscn")
 const DestinationPanelScene = preload("destination_panel.tscn")
-const SpawnPoint = Vector2(75, 420)
+@onready var spawn_points: Array[Node2D] = [%SpawnPoint, %SpawnPoint2, %SpawnPoint3, %SpawnPoint4]
+@onready var spawn_point := spawn_points.pick_random().position as Vector2
 
 @onready var house_locations: Node2D = %HouseLocations
 @onready var hover_node: Node2D = %HoverNode
@@ -18,7 +19,6 @@ const SpawnPoint = Vector2(75, 420)
 @onready var popup: Control = %Popup
 @onready var house_priority_holder: HousePriorityHolder = %HousePriorityHolder
 @onready var path_line: Line2D = %PathLine
-@onready var destination_panel: DestinationPanel = %DestinationPanel
 
 @onready var go_button: NinePatchButton = %GoButton
 
@@ -73,7 +73,7 @@ func _on_close_popup_pressed_animation_finished() -> void:
 
 func draw_path() -> void:
 	path_line.clear_points()
-	path_line.add_point(SpawnPoint)
+	path_line.add_point(spawn_point)
 	Glob.queue_free_children(path_line)
 	for house in HouseGlob.get_sorted_houses_by_property("priority"):
 		var pos := house_insts[house.house_id].global_position
@@ -94,7 +94,7 @@ func add_player(player_inst: PlayerBody) -> void:
 	priority_button.visible = false
 	start_day_button.visible = false
 	current_point = 0
-	player_inst.position = SpawnPoint
+	player_inst.position = spawn_point
 	house_locations.add_child(player_inst)
 	player_reached_point(player_inst)
 	#player_inst.set_destination(path_line.points[get_next_point()])
