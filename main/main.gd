@@ -7,6 +7,8 @@ signal transition_shown
 @export var progress_system: ProgressSystem
 @export var map_system: MapSystem
 @export var house_system: HouseSystem
+@export var player_system: PlayerSystem
+
 
 @onready var transition: ColorRect = %Transition
 

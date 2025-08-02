@@ -1,11 +1,14 @@
-extends CharacterBody2D
+class_name PlayerBody extends CharacterBody2D
 
+
+@export var navigator: PlayerNavigator
 
 var move_direction: Vector2
 
 var acceleration: float = 180.0
 var braking_power: float = 800.0
 var max_speed: float = 80.0
+
 
 func _physics_process(delta: float) -> void:
 	if move_direction.is_zero_approx():
@@ -15,3 +18,7 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.limit_length(max_speed)
 	move_and_slide()
 	move_direction = Vector2.ZERO
+
+
+func set_destination(destination_position: Vector2) -> void:
+	navigator.current_follow_target = destination_position

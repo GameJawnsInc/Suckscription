@@ -23,6 +23,7 @@ MapGlob="*res://main/map/map_glob.gd"
 ProgressGlob="*res://main/progress/progress_glob.gd"
 Glob="*res://main/glob.gd"
 HouseGlob="*res://main/house/house_glob.gd"
+PlayerGlob="*res://main/player/player_glob.gd"
 
 [display]
 

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://x3eh6gc5a6au"]
+
+[ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="1_neami"]
+[ext_resource type="Script" uid="uid://71aw1w5lxye2" path="res://main/ui/nine_patch_panel/destination_panel.gd" id="2_7e00f"]
+
+[node name="NinePatchPanel" instance=ExtResource("1_neami")]
+offset_left = 998.0
+offset_top = 21.0
+offset_right = 1385.0
+offset_bottom = 245.0
+script = ExtResource("2_7e00f")
+name_string = ""
+destination_string = ""
+
+[node name="DestLabel" type="RichTextLabel" parent="." index="1"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Destination:
+
+Franklin's House"
+horizontal_alignment = 1
+vertical_alignment = 1

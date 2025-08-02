@@ -1,17 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvdkg4vitku45"]
+[gd_scene load_steps=7 format=3 uid="uid://dvdkg4vitku45"]
 
 [ext_resource type="Script" uid="uid://ds7ew3mmhoelm" path="res://main/main.gd" id="1_53q0u"]
 [ext_resource type="Script" uid="uid://buwaqtbse6l7n" path="res://main/headquarters/headquarters_system.gd" id="2_c651c"]
 [ext_resource type="Script" uid="uid://cgkd6cig3rosn" path="res://main/map/map_system.gd" id="2_pjrb6"]
 [ext_resource type="Script" uid="uid://bjia4qaognjie" path="res://main/progress/progress_system.gd" id="3_xwkvk"]
 [ext_resource type="Script" uid="uid://c860jgboquka8" path="res://main/house/house_system.gd" id="5_3wy1v"]
+[ext_resource type="Script" uid="uid://cltkadmo4jvni" path="res://main/player_system.gd" id="6_kfbq2"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("headquarters_system", "progress_system", "map_system", "house_system")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("headquarters_system", "progress_system", "map_system", "house_system", "player_system")]
 script = ExtResource("1_53q0u")
 headquarters_system = NodePath("HeadquartersSystem")
 progress_system = NodePath("ProgressSystem")
 map_system = NodePath("MapSystem")
 house_system = NodePath("HouseSystem")
+player_system = NodePath("PlayerSystem")
 
 [node name="ProgressSystem" type="Node2D" parent="."]
 script = ExtResource("3_xwkvk")
@@ -24,6 +26,9 @@ script = ExtResource("5_3wy1v")
 
 [node name="MapSystem" type="Node2D" parent="."]
 script = ExtResource("2_pjrb6")
+
+[node name="PlayerSystem" type="Node2D" parent="."]
+script = ExtResource("6_kfbq2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 99

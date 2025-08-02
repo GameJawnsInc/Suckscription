@@ -4,8 +4,11 @@ extends Node
 const OverworldScene = preload("overworld/overworld.tscn")
 const OverworldHouseScene = preload("overworld/house.tscn")
 
+var overworld: Overworld
+
 func get_overworld_inst() -> Overworld:
-	return OverworldScene.instantiate()
+	overworld = OverworldScene.instantiate()
+	return overworld
 
 
 func get_house_inst(house_id: int) -> OverworldHouse:

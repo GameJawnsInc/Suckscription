@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvigv2q4f4h0l"]
+
+[ext_resource type="Texture2D" uid="uid://dsyg14kbpibbd" path="res://assets/overworld/move_arrow.png" id="1_23wgj"]
+[ext_resource type="Script" uid="uid://bipyhsescxcv2" path="res://main/map/overworld/move_arrow.gd" id="2_ijt8e"]
+
+[node name="MoveArrow" type="Sprite2D"]
+self_modulate = Color(0.411765, 0.301961, 0.458824, 0.788235)
+texture = ExtResource("1_23wgj")
+offset = Vector2(0, -28.5)
+script = ExtResource("2_ijt8e")
