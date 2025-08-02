@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://ttr6fmco3ga1"
+path="res://.godot/imported/vampire.atlas-a50afa2dcad9054073295b698d17c685.spatlas"
+
+[deps]
+
+source_file="res://assets/headquarters/vampire/vampire.atlas"
+dest_files=["res://.godot/imported/vampire.atlas-a50afa2dcad9054073295b698d17c685.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

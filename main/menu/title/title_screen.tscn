@@ -20,7 +20,7 @@ offset_left = -3.0
 offset_top = -5.0
 offset_right = 1412.0
 offset_bottom = 797.0
-color_choice = 2
+color_choice = 11
 
 [node name="MarginContainer" type="MarginContainer" parent="NinePatchPanel"]
 layout_mode = 1
@@ -33,7 +33,7 @@ mouse_filter = 2
 
 [node name="NinePatchPanel" parent="NinePatchPanel/MarginContainer" instance=ExtResource("2_6whqj")]
 layout_mode = 2
-color_choice = 0
+color_choice = 11
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -91,7 +91,7 @@ pivot_offset = Vector2(194, 60)
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
 text = "NEW GAME"
-color_choice = 5
+color_choice = 6
 
 [node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(388.32, 120)

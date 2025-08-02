@@ -3,6 +3,8 @@ class_name Overworld extends Node2D
 
 signal day_started
 signal go_pressed
+signal map_completed
+
 
 const PointInfoScene = preload("overworld_path_point_info.tscn")
 const MoveArrowScene = preload("move_arrow.tscn")
@@ -88,6 +90,8 @@ func _on_start_day_button_pressed_animation_finished() -> void:
 	day_started.emit()
 
 func add_player(player_inst: PlayerBody) -> void:
+	Glob.main.show_transition()
+	await Glob.main.transition_shown
 	disconnect_houses_from_popup()
 	hover_node.visible = false
 	path_line.visible = false
@@ -97,13 +101,21 @@ func add_player(player_inst: PlayerBody) -> void:
 	player_inst.position = spawn_point
 	house_locations.add_child(player_inst)
 	player_reached_point(player_inst)
-	#player_inst.set_destination(path_line.points[get_next_point()])
+	await Glob.main.progress_system.times_up
+	player_inst.is_movement_disabled = true
+	Glob.main.show_transition()
+	await Glob.main.transition_shown
+	player_inst.queue_free()
+	map_completed.emit()
+	queue_free()
 
 func player_reached_point(player_inst: PlayerBody) -> void:
-	go_button.visible = true
-	await go_pressed
+	if player_inst.is_movement_disabled:
+		return
+	#go_button.visible = true
+	#await go_pressed
 	var destination := path_line.points[get_next_point()]
-	var house := house_insts[current_point - 1].house
+	var house := HouseGlob.get_sorted_houses_by_property("priority")[current_point - 1]
 	var inst := DestinationPanelScene.instantiate()
 	inst.name_string = house.display_name
 	inst.destination_string = HouseGlob.get_trait_name(house.trait_id)
@@ -115,8 +127,8 @@ func player_reached_point(player_inst: PlayerBody) -> void:
 
 func get_next_point() -> int:
 	current_point = current_point + 1
-	if current_point == HouseGlob.HouseCount:
-		current_point = 0
+	if current_point == HouseGlob.HouseCount + 1:
+		current_point = 1
 	return current_point
 
 

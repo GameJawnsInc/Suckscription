@@ -3,7 +3,7 @@ class_name NinePatchPanel extends NinePatchRect
 
 
 enum ColorChoice{VIRIDIAN, CELADON, PLATINUM, CINEROUS,
- NIGHT, TANGERINE, ENGLISH_VIOLET, ROSE_QUARTZ, DARK_PURPLE, ONYX, REDWOOD}
+ NIGHT, TANGERINE, ENGLISH_VIOLET, ROSE_QUARTZ, DARK_PURPLE, ONYX, REDWOOD, CHARCOAL}
 
 const ColorDict: Dictionary[ColorChoice, Color] = {
 	ColorChoice.VIRIDIAN : Color("5B9279"),
@@ -17,6 +17,7 @@ const ColorDict: Dictionary[ColorChoice, Color] = {
 	ColorChoice.DARK_PURPLE : Color("1E152A"),
 	ColorChoice.ONYX : Color("454545"),
 	ColorChoice.REDWOOD : Color("9D695A"),
+	ColorChoice.CHARCOAL : Color("383F51"),
 }
 
 @export var color_choice: ColorChoice :

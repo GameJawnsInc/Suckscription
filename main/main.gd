@@ -27,7 +27,14 @@ func new_game() -> void:
 	progress_system.set_to_new_game()
 	headquarters_system.set_to_new_game()
 	house_system.set_to_new_game()
+	do_game_loop()
+
+func do_game_loop() -> void:
+	headquarters_system.begin_day()
+	await headquarters_system.headquarters_accepted
 	map_system.load_overworld()
+	await map_system.day_ended
+	do_game_loop()
 
 func show_transition() -> void:
 	transition.visible = true
