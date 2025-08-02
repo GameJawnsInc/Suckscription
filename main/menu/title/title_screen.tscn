@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvjadpj1h5dtl"]
+[gd_scene load_steps=5 format=3 uid="uid://dvjadpj1h5dtl"]
 
 [ext_resource type="Script" uid="uid://b815ltoes0kww" path="res://main/menu/title/title_screen.gd" id="1_tlab8"]
 [ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="2_6whqj"]
 [ext_resource type="PackedScene" uid="uid://ccaxx8d4y6wvp" path="res://main/ui/nine_patch_button/nine_patch_button.tscn" id="3_q1id0"]
+[ext_resource type="Script" uid="uid://bfx5oji424sxt" path="res://main/menu/title/music_slider.gd" id="4_iftbm"]
 
 [node name="TitleScreen" type="Control" node_paths=PackedStringArray("buttons")]
 custom_minimum_size = Vector2(1408, 792)
@@ -122,5 +123,24 @@ theme_override_font_sizes/font_size = 64
 text = "QUIT GAME"
 color_choice = 5
 
+[node name="MusicSlider" type="VSlider" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 133.0
+offset_right = 222.0
+offset_bottom = 481.0
+min_value = -30.0
+max_value = 0.0
+script = ExtResource("4_iftbm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MusicSlider"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 367.0
+offset_right = 181.0
+offset_bottom = 407.0
+text = "Music Level"
+
 [connection signal="pressed" from="VBoxContainer/CenterContainer/Control/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer2/Control/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="MusicSlider" to="MusicSlider" method="_on_value_changed"]

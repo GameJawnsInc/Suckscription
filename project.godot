@@ -24,6 +24,8 @@ ProgressGlob="*res://main/progress/progress_glob.gd"
 Glob="*res://main/glob.gd"
 HouseGlob="*res://main/house/house_glob.gd"
 PlayerGlob="*res://main/player/player_glob.gd"
+SpineGlob="*res://main/helper/spine_glob.gd"
+AudioGlob="*res://main/audio/audio_glob.gd"
 
 [display]
 

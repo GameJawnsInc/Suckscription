@@ -1,16 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqgvgmh5o8l2d"]
+[gd_scene load_steps=5 format=3 uid="uid://cqgvgmh5o8l2d"]
 
 [ext_resource type="Script" uid="uid://ql1jpqgspoc8" path="res://main/map/overworld/house.gd" id="1_g835h"]
-[ext_resource type="Texture2D" uid="uid://dkh7ak5ctg8ft" path="res://assets/overworld/house.png" id="1_i4rcd"]
+[ext_resource type="Texture2D" uid="uid://bwf4kbj6jrnyx" path="res://assets/overworld/house/roof.png" id="2_pavx1"]
+[ext_resource type="Texture2D" uid="uid://d3ux56vcgshuy" path="res://assets/overworld/house/walls.png" id="3_jn3ko"]
+[ext_resource type="Texture2D" uid="uid://bveru4lfk4sek" path="res://assets/overworld/house/frame.png" id="4_xx21e"]
 
 [node name="House" type="Node2D"]
+scale = Vector2(1.3, 1.3)
 script = ExtResource("1_g835h")
+
+[node name="RoofColor" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(2, -41)
+texture = ExtResource("2_pavx1")
+
+[node name="WallColor" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1, -18)
+texture = ExtResource("3_jn3ko")
 
 [node name="HouseSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -24)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_i4rcd")
+position = Vector2(0, -25)
+texture = ExtResource("4_xx21e")
 
 [node name="Label" type="RichTextLabel" parent="."]
 unique_name_in_owner = true

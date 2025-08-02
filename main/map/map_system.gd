@@ -4,14 +4,17 @@ class_name MapSystem extends Node2D
 signal day_started
 signal day_ended
 
+
+var current_overworld: Overworld
+
 func load_overworld() -> void:
-	var inst := MapGlob.get_overworld_inst()
-	add_child(inst)
-	Glob.main.player_system.player_inst_created.connect(inst.add_player)
-	Glob.main.player_system.player_destination_reached.connect(inst.player_reached_point)
-	await inst.day_started
+	current_overworld = MapGlob.get_overworld_inst()
+	add_child(current_overworld)
+	Glob.main.player_system.player_inst_created.connect(current_overworld.add_player)
+	Glob.main.player_system.player_destination_reached.connect(current_overworld.player_reached_point)
+	await current_overworld.start_day_requested
 	day_started.emit()
-	await inst.map_completed
+	await current_overworld.map_completed
 	day_ended.emit()
 
 func player_destination_reached() -> void:

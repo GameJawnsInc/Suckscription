@@ -1,7 +1,7 @@
 class_name Overworld extends Node2D
 
 
-signal day_started
+signal start_day_requested
 signal go_pressed
 signal map_completed
 
@@ -9,6 +9,9 @@ signal map_completed
 const PointInfoScene = preload("overworld_path_point_info.tscn")
 const MoveArrowScene = preload("move_arrow.tscn")
 const DestinationPanelScene = preload("destination_panel.tscn")
+const TutorialScene = preload("overworld_tutorial.tscn")
+const DayCompleteScene = preload("day_complete.tscn")
+
 @onready var spawn_points: Array[Node2D] = [%SpawnPoint, %SpawnPoint2, %SpawnPoint3, %SpawnPoint4]
 @onready var spawn_point := spawn_points.pick_random().position as Vector2
 
@@ -18,7 +21,7 @@ const DestinationPanelScene = preload("destination_panel.tscn")
 @onready var hover_label_2: RichTextLabel = %HoverLabel2
 @onready var priority_button: NinePatchButton = %PriorityButton
 @onready var start_day_button: NinePatchButton = %StartDayButton
-@onready var popup: Control = %Popup
+@onready var priority_popup: Control = %PriorityPopup
 @onready var house_priority_holder: HousePriorityHolder = %HousePriorityHolder
 @onready var path_line: Line2D = %PathLine
 
@@ -30,7 +33,7 @@ var house_insts: Array[OverworldHouse] = []
 var current_point: int = 0
 
 func _ready() -> void:
-	popup.visible = false
+	priority_popup.visible = false
 	hover_node.visible = false
 	go_button.visible = false
 	for house_location_index  in house_locations.get_children().size():
@@ -41,6 +44,12 @@ func _ready() -> void:
 	connect_houses_to_popup()
 	priority_button.pivot_offset = Vector2(196.5, 45.0)
 	draw_path()
+	if Glob.main.progress_system.current_day == 1:
+		show_tutorial()
+
+func show_tutorial() -> void:
+	var inst := TutorialScene.instantiate()
+	add_child(inst)
 
 func connect_houses_to_popup() -> void:
 	for house_inst in house_insts:
@@ -64,12 +73,12 @@ func house_released(_house_inst: OverworldHouse) -> void:
 
 
 func _on_priority_button_pressed_animation_finished() -> void:
-	popup.visible = true
+	priority_popup.visible = true
 	house_priority_holder.refresh()
 
 
 func _on_close_popup_pressed_animation_finished() -> void:
-	popup.visible = false
+	priority_popup.visible = false
 	draw_path()
 
 
@@ -81,7 +90,7 @@ func draw_path() -> void:
 		var pos := house_insts[house.house_id].global_position
 		path_line.add_point(pos)
 		var label := PointInfoScene.instantiate()
-		label.position = pos
+		label.position = pos + Vector2(-30, -30)
 		label.path_label = str(house.priority + 1)
 		path_line.add_child(label)
 
@@ -89,7 +98,8 @@ func draw_path() -> void:
 func _on_start_day_button_pressed_animation_finished() -> void:
 	Glob.main.show_transition()
 	await Glob.main.transition_shown
-	day_started.emit()
+	start_day_requested.emit()
+
 
 func add_player(player_inst: PlayerBody) -> void:
 	disconnect_houses_from_popup()
@@ -103,11 +113,15 @@ func add_player(player_inst: PlayerBody) -> void:
 	player_reached_point(player_inst)
 	await Glob.main.progress_system.times_up
 	player_inst.is_movement_disabled = true
+	var day_complete_banner := DayCompleteScene.instantiate()
+	add_child(day_complete_banner)
+	await day_complete_banner.animation_complete
 	Glob.main.show_transition()
 	await Glob.main.transition_shown
 	player_inst.queue_free()
 	map_completed.emit()
 	queue_free()
+
 
 func player_reached_point(player_inst: PlayerBody) -> void:
 	if player_inst.is_movement_disabled:

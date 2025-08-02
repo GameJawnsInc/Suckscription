@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjdpt577ovar0"]
+
+[ext_resource type="Script" uid="uid://cs2nitw3jc4k2" path="res://main/map/overworld/overworld_tutorial.gd" id="1_4rkdd"]
+[ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="1_v3q4l"]
+[ext_resource type="PackedScene" uid="uid://ccaxx8d4y6wvp" path="res://main/ui/nine_patch_button/nine_patch_button.tscn" id="2_lxifq"]
+
+[node name="OverworldTutorial" type="Control"]
+custom_minimum_size = Vector2(1408, 792)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1408.0
+offset_bottom = 792.0
+script = ExtResource("1_4rkdd")
+
+[node name="NinePatchPanel" parent="." instance=ExtResource("1_v3q4l")]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 529.0
+offset_right = 1406.0
+offset_bottom = 787.0
+color_choice = 9
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+
+[node name="Label" type="RichTextLabel" parent="NinePatchPanel/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Choose your route with the PRIORITY button.
+
+Start your route with the START DAY button."
+
+[node name="GotItButton" parent="NinePatchPanel/VBoxContainer" instance=ExtResource("2_lxifq")]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "GOT IT"
+color_choice = 6
+
+[connection signal="pressed_animation_finished" from="NinePatchPanel/VBoxContainer/GotItButton" to="." method="_on_got_it_button_pressed_animation_finished"]

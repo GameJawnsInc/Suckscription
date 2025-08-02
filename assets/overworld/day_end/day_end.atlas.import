@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://dj30pxh6edmql"
+path="res://.godot/imported/day_end.atlas-495646d1d0c3183c932c39196133d418.spatlas"
+
+[deps]
+
+source_file="res://assets/overworld/day_end/day_end.atlas"
+dest_files=["res://.godot/imported/day_end.atlas-495646d1d0c3183c932c39196133d418.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"
