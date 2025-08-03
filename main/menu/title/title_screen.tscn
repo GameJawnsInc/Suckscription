@@ -92,6 +92,7 @@ pivot_offset = Vector2(194, 60)
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
 text = "NEW GAME"
+disable_on_pressed = true
 color_choice = 6
 
 [node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
@@ -121,6 +122,7 @@ pivot_offset = Vector2(194, 60)
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
 text = "QUIT GAME"
+disable_on_pressed = true
 color_choice = 5
 
 [node name="MusicSlider" type="VSlider" parent="."]

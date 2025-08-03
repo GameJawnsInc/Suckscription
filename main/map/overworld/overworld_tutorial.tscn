@@ -49,6 +49,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "GOT IT"
+disable_on_pressed = false
 color_choice = 6
 
 [connection signal="pressed_animation_finished" from="NinePatchPanel/VBoxContainer/GotItButton" to="." method="_on_got_it_button_pressed_animation_finished"]

@@ -1,0 +1,16 @@
+player.png
+size:81,88
+filter:Linear,Linear
+Layer 1
+bounds:2,34,57,52
+offsets:1,1,59,54
+Layer 2
+bounds:2,2,24,30
+offsets:1,1,26,32
+Layer 3
+bounds:28,5,24,27
+offsets:1,1,26,29
+Layer 4
+bounds:61,54,18,32
+Layer 5
+bounds:54,2,17,30

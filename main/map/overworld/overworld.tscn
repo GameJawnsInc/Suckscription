@@ -84,7 +84,7 @@ unique_name_in_owner = true
 y_sort_enabled = true
 
 [node name="h1" type="Node2D" parent="HouseLocations"]
-position = Vector2(326, 701)
+position = Vector2(326, 702)
 
 [node name="h2" type="Node2D" parent="HouseLocations"]
 position = Vector2(254, 466)
@@ -106,9 +106,6 @@ position = Vector2(810, 311)
 
 [node name="h8" type="Node2D" parent="HouseLocations"]
 position = Vector2(803, 683)
-
-[node name="h9" type="Node2D" parent="HouseLocations"]
-position = Vector2(775, 554)
 
 [node name="PathLine" type="Line2D" parent="."]
 unique_name_in_owner = true
@@ -175,7 +172,8 @@ grow_vertical = 2
 pivot_offset = Vector2(100, 40)
 size_flags_horizontal = 3
 text = "PRIORITY"
-color_choice = 2
+disable_on_pressed = true
+color_choice = 5
 
 [node name="MarginContainer2" type="MarginContainer" parent="Buttons"]
 custom_minimum_size = Vector2(200, 100)
@@ -215,7 +213,8 @@ grow_vertical = 2
 pivot_offset = Vector2(100, 40)
 size_flags_horizontal = 3
 text = "START DAY"
-color_choice = 10
+disable_on_pressed = true
+color_choice = 6
 
 [node name="CenterContainer2" type="CenterContainer" parent="Buttons"]
 layout_mode = 1
@@ -251,6 +250,7 @@ pivot_offset = Vector2(150, 150)
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 108
 text = "GO"
+disable_on_pressed = true
 color_choice = 5
 
 [node name="HoverNode" type="Node2D" parent="."]
@@ -387,6 +387,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(80, 40)
 text = "CLOSE"
+disable_on_pressed = true
 color_choice = 3
 
 [connection signal="pressed_animation_finished" from="Buttons/MarginContainer/HBoxContainer/CenterContainer2/Control/PriorityButton" to="." method="_on_priority_button_pressed_animation_finished"]

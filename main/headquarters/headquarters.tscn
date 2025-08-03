@@ -1,0 +1,298 @@
+[gd_scene load_steps=6 format=3 uid="uid://biop60nn5ed"]
+
+[ext_resource type="Script" uid="uid://0ete0y2uvat2" path="res://main/headquarters/headquarters.gd" id="1_xqcfu"]
+[ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="2_fn3h2"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://bfhonmhd7p34q" path="res://assets/headquarters/vampire/vampire.tres" id="3_rjl0t"]
+[ext_resource type="Script" uid="uid://bn2awm7d0pr45" path="res://main/vampire_spine.gd" id="4_u2f2o"]
+[ext_resource type="PackedScene" uid="uid://ccaxx8d4y6wvp" path="res://main/ui/nine_patch_button/nine_patch_button.tscn" id="5_0tr8s"]
+
+[node name="Headquarters" type="Control"]
+custom_minimum_size = Vector2(1408, 792)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_xqcfu")
+
+[node name="NinePatchPanel" parent="." instance=ExtResource("2_fn3h2")]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -6.0
+offset_right = 1412.0
+offset_bottom = 796.0
+color_choice = 11
+
+[node name="VampireSpine" type="SpineSprite" parent="."]
+unique_name_in_owner = true
+position = Vector2(251, 731)
+scale = Vector2(0.8, 0.8)
+skeleton_data_res = ExtResource("3_rjl0t")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0
+script = ExtResource("4_u2f2o")
+
+[node name="TextPanel" parent="." instance=ExtResource("2_fn3h2")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 462.0
+offset_top = 90.0
+offset_right = 1363.0
+offset_bottom = 517.0
+color_choice = 9
+
+[node name="VampText" type="RichTextLabel" parent="TextPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_outline_size = 100
+theme_override_font_sizes/normal_font_size = 64
+text = "Get out there and sell my products. Recruit these gnaves into my coven."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonHolder" type="HBoxContainer" parent="TextPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="B1Holder" type="CenterContainer" parent="TextPanel/ButtonHolder"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="TextPanel/ButtonHolder/B1Holder"]
+layout_mode = 2
+
+[node name="Button1" parent="TextPanel/ButtonHolder/B1Holder/Control" instance=ExtResource("5_0tr8s")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 220)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -110.0
+offset_right = 150.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 110)
+size_flags_horizontal = 3
+text = "CONSIDER IT DONE,   MY LORD"
+disable_on_pressed = true
+color_choice = 6
+
+[node name="B2Holder" type="CenterContainer" parent="TextPanel/ButtonHolder"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="TextPanel/ButtonHolder/B2Holder"]
+layout_mode = 2
+
+[node name="Button2" parent="TextPanel/ButtonHolder/B2Holder/Control2" instance=ExtResource("5_0tr8s")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 220)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -110.0
+offset_right = 150.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 110)
+size_flags_horizontal = 3
+text = "THEY'RE NOT GNAVES, THEY'RE NICE PEOPLE."
+disable_on_pressed = true
+color_choice = 5
+
+[node name="B3Holder" type="CenterContainer" parent="TextPanel/ButtonHolder"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="TextPanel/ButtonHolder/B3Holder"]
+layout_mode = 2
+
+[node name="Button3" parent="TextPanel/ButtonHolder/B3Holder/Control2" instance=ExtResource("5_0tr8s")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 220)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -110.0
+offset_right = 150.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 110)
+size_flags_horizontal = 3
+text = "THEY'RE NOT GNAVES, THEY'RE NICE PEOPLE."
+disable_on_pressed = true
+color_choice = 3
+
+[node name="NextHolder" type="HBoxContainer" parent="TextPanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 251.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CenterContainer2" type="CenterContainer" parent="TextPanel/NextHolder"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="TextPanel/NextHolder/CenterContainer2"]
+layout_mode = 2
+
+[node name="NextButton" parent="TextPanel/NextHolder/CenterContainer2/Control2" instance=ExtResource("5_0tr8s")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 220)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -80.0
+offset_right = 175.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(175, 80)
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 84
+text = "NEXT"
+disable_on_pressed = true
+color_choice = 6
+
+[node name="InventoryPanel" parent="." instance=ExtResource("2_fn3h2")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 461.0
+offset_top = 130.0
+offset_right = 1374.0
+offset_bottom = 740.0
+color_choice = 9
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="VBoxContainer" parent="InventoryPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Inventory1" parent="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer" instance=ExtResource("5_0tr8s")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+disable_on_pressed = true
+
+[node name="Inventory2" parent="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer" instance=ExtResource("5_0tr8s")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+disable_on_pressed = true
+
+[node name="Inventory3" parent="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer" instance=ExtResource("5_0tr8s")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+disable_on_pressed = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="InventoryPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Inventory4" parent="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer2" instance=ExtResource("5_0tr8s")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+disable_on_pressed = true
+
+[node name="Inventory5" parent="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer2" instance=ExtResource("5_0tr8s")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+disable_on_pressed = true
+
+[node name="Inventory6" parent="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer2" instance=ExtResource("5_0tr8s")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+disable_on_pressed = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InventoryPanel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -117.0
+offset_right = 909.0
+offset_bottom = -4.0
+theme_override_font_sizes/normal_font_size = 72
+text = "Select 4 Products to sell"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="animation_completed" from="VampireSpine" to="." method="_on_vampire_spine_animation_completed"]
+[connection signal="pressed_animation_finished" from="TextPanel/ButtonHolder/B1Holder/Control/Button1" to="." method="_on_button_1_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="TextPanel/ButtonHolder/B2Holder/Control2/Button2" to="." method="_on_button_2_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="TextPanel/ButtonHolder/B3Holder/Control2/Button3" to="." method="_on_button_3_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="TextPanel/NextHolder/CenterContainer2/Control2/NextButton" to="." method="_on_next_button_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer/Inventory1" to="." method="_on_inventory_1_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer/Inventory2" to="." method="_on_inventory_2_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer/Inventory3" to="." method="_on_inventory_3_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer2/Inventory4" to="." method="_on_inventory_4_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer2/Inventory5" to="." method="_on_inventory_5_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer2/Inventory6" to="." method="_on_inventory_6_pressed_animation_finished"]

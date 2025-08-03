@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://di1j07jk0pbao"]
+[gd_scene load_steps=5 format=3 uid="uid://di1j07jk0pbao"]
 
 [ext_resource type="Script" uid="uid://71squtmhadpw" path="res://main/map/overworld/day_complete.gd" id="1_dyfl2"]
 [ext_resource type="SpineSkeletonDataResource" uid="uid://cxvlsfi8gqvos" path="res://assets/overworld/day_end/day_end.tres" id="1_xqpk4"]
 [ext_resource type="Script" uid="uid://cdj5k8iax6awi" path="res://main/map/overworld/spine_sprite.gd" id="2_dyfl2"]
+[ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="4_t2cdf"]
 
 [node name="DayComplete" type="Control"]
 custom_minimum_size = Vector2(1408, 792)
@@ -1469,20 +1470,29 @@ preview_frame = false
 preview_time = 0.0
 script = ExtResource("2_dyfl2")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="NinePatchPanel" parent="." instance=ExtResource("4_t2cdf")]
+modulate = Color(1, 1, 1, 0.74902)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -293.5
-offset_top = -60.0
-offset_right = 293.5
-offset_bottom = 60.0
+offset_left = -501.0
+offset_top = -81.5
+offset_right = 501.0
+offset_bottom = 81.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 72
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 128
 text = "DAY COMPLETE!!!"
 horizontal_alignment = 1
 vertical_alignment = 1

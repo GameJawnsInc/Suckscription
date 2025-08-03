@@ -14,7 +14,7 @@ signal down_pressed
 var house: House
 
 func _ready() -> void:
-	house_label.text = house.display_name
+	house_label.text = house.display_name + " (Rela: " + str(house.relationship) + ")"
 	number_label.text = str(house.priority + 1) + "."
 
 

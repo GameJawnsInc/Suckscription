@@ -7,6 +7,7 @@ const ClockScene = preload("clock.tscn")
 
 @export var progress_system: ProgressSystem
 
+var suspicion: int = 0
 
 func get_current_day() -> int:
 	return progress_system.current_day

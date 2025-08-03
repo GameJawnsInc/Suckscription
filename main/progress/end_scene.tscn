@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf4ydna8k8xfd"]
+
+[ext_resource type="Script" uid="uid://cbsmxa4fcq5x8" path="res://main/progress/end_scene.gd" id="1_jh5kd"]
+[ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="2_y0rcs"]
+
+[node name="EndScene" type="Control"]
+custom_minimum_size = Vector2(1408, 792)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1408.0
+offset_bottom = 792.0
+script = ExtResource("1_jh5kd")
+
+[node name="NinePatchPanel" parent="." instance=ExtResource("2_y0rcs")]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -6.0
+offset_right = 1413.0
+offset_bottom = 797.0
+color_choice = 11
+
+[node name="Label" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 54
+text = "gadgadg"
+horizontal_alignment = 1
+vertical_alignment = 1

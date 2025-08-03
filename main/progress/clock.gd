@@ -7,8 +7,11 @@ signal times_up
 
 
 var time: float = 0
+var is_waiting: bool = false
 
 func _process(delta: float) -> void:
+	if is_waiting:
+		return
 	time += delta
 	if time >= ProgressGlob.DayLength:
 		times_up.emit()
@@ -39,3 +42,10 @@ func convert_to_12hour(time_dict: Dictionary) -> String:
 	elif hour == 0:  # Handle 00:XX as 12:XX AM
 		hour = 12
 	return "%d:%02d %s" % [hour, minute, ampm]
+
+func pause_timer() -> void:
+	is_waiting = true
+
+
+func resume_timer() -> void:
+	is_waiting = false

@@ -68,6 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(70, 30)
 text = "UP"
+disable_on_pressed = true
 color_choice = 6
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
@@ -94,6 +95,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(70, 30)
 text = "DOWN"
+disable_on_pressed = true
 color_choice = 5
 
 [connection signal="pressed" from="CenterContainer/Control/UpButton" to="." method="_on_up_button_pressed"]

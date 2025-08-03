@@ -1,129 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvdkg4vitku45"]
+[gd_scene load_steps=8 format=3 uid="uid://dvdkg4vitku45"]
 
 [ext_resource type="Script" uid="uid://ds7ew3mmhoelm" path="res://main/main.gd" id="1_53q0u"]
 [ext_resource type="Script" uid="uid://buwaqtbse6l7n" path="res://main/headquarters/headquarters_system.gd" id="2_c651c"]
 [ext_resource type="Script" uid="uid://cgkd6cig3rosn" path="res://main/map/map_system.gd" id="2_pjrb6"]
 [ext_resource type="Script" uid="uid://bjia4qaognjie" path="res://main/progress/progress_system.gd" id="3_xwkvk"]
-[ext_resource type="SpineSkeletonDataResource" uid="uid://bfhonmhd7p34q" path="res://assets/headquarters/vampire/vampire.tres" id="4_67ri8"]
 [ext_resource type="Script" uid="uid://c860jgboquka8" path="res://main/house/house_system.gd" id="5_3wy1v"]
-[ext_resource type="Script" uid="uid://bn2awm7d0pr45" path="res://main/vampire_spine.gd" id="5_grrlh"]
-[ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="6_grrlh"]
 [ext_resource type="Script" uid="uid://cltkadmo4jvni" path="res://main/player_system.gd" id="6_kfbq2"]
-[ext_resource type="PackedScene" uid="uid://ccaxx8d4y6wvp" path="res://main/ui/nine_patch_button/nine_patch_button.tscn" id="7_0i4oc"]
+[ext_resource type="Script" uid="uid://bwuaoogbpmegt" path="res://main/products/product_system.gd" id="7_4dugh"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("headquarters_system", "progress_system", "map_system", "house_system", "player_system")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("headquarters_system", "progress_system", "map_system", "house_system", "player_system", "product_system")]
 script = ExtResource("1_53q0u")
 headquarters_system = NodePath("HeadquartersSystem")
 progress_system = NodePath("ProgressSystem")
 map_system = NodePath("MapSystem")
 house_system = NodePath("HouseSystem")
 player_system = NodePath("PlayerSystem")
+product_system = NodePath("ProductSystem")
 
 [node name="HeadquartersSystem" type="Node2D" parent="."]
 script = ExtResource("2_c651c")
-
-[node name="NinePatchPanel" parent="HeadquartersSystem" instance=ExtResource("6_grrlh")]
-offset_left = -4.0
-offset_top = -6.0
-offset_right = 1412.0
-offset_bottom = 796.0
-color_choice = 11
-
-[node name="VampireSpine" type="SpineSprite" parent="HeadquartersSystem"]
-unique_name_in_owner = true
-position = Vector2(304, 737)
-scale = Vector2(0.8, 0.8)
-skeleton_data_res = ExtResource("4_67ri8")
-preview_skin = "Default"
-preview_animation = "-- Empty --"
-preview_frame = false
-preview_time = 0.0
-script = ExtResource("5_grrlh")
-
-[node name="NinePatchPanel2" parent="HeadquartersSystem" instance=ExtResource("6_grrlh")]
-offset_left = 524.0
-offset_top = 90.0
-offset_right = 1320.0
-offset_bottom = 517.0
-color_choice = 9
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HeadquartersSystem/NinePatchPanel2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/shadow_outline_size = 100
-theme_override_font_sizes/normal_font_size = 64
-text = "Get out there and sell my products. Recruit these gnaves into my coven."
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ButtonHolder" type="HBoxContainer" parent="HeadquartersSystem/NinePatchPanel2"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = 177.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="CenterContainer" type="CenterContainer" parent="HeadquartersSystem/NinePatchPanel2/ButtonHolder"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Control" type="Control" parent="HeadquartersSystem/NinePatchPanel2/ButtonHolder/CenterContainer"]
-layout_mode = 2
-
-[node name="Comply" parent="HeadquartersSystem/NinePatchPanel2/ButtonHolder/CenterContainer/Control" instance=ExtResource("7_0i4oc")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(350, 160)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -175.0
-offset_top = -39.0
-offset_right = 175.0
-offset_bottom = 39.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(175, 80)
-size_flags_horizontal = 3
-text = "CONSIDER IT DONE,   MY LORD"
-color_choice = 6
-
-[node name="CenterContainer2" type="CenterContainer" parent="HeadquartersSystem/NinePatchPanel2/ButtonHolder"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Control2" type="Control" parent="HeadquartersSystem/NinePatchPanel2/ButtonHolder/CenterContainer2"]
-layout_mode = 2
-
-[node name="Resist" parent="HeadquartersSystem/NinePatchPanel2/ButtonHolder/CenterContainer2/Control2" instance=ExtResource("7_0i4oc")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(350, 160)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -175.0
-offset_top = -80.0
-offset_right = 175.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(175, 80)
-size_flags_horizontal = 3
-text = "THEY'RE NOT GNAVES, THEY'RE NICE PEOPLE."
-color_choice = 5
 
 [node name="HouseSystem" type="Node2D" parent="."]
 script = ExtResource("5_3wy1v")
@@ -137,6 +32,9 @@ script = ExtResource("3_xwkvk")
 [node name="PlayerSystem" type="Node2D" parent="."]
 script = ExtResource("6_kfbq2")
 
+[node name="ProductSystem" type="Node2D" parent="."]
+script = ExtResource("7_4dugh")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 99
 follow_viewport_enabled = true
@@ -146,7 +44,3 @@ unique_name_in_owner = true
 visible = false
 offset_right = 1408.0
 offset_bottom = 792.0
-
-[connection signal="animation_completed" from="HeadquartersSystem/VampireSpine" to="HeadquartersSystem" method="_on_vampire_spine_animation_completed"]
-[connection signal="pressed_animation_finished" from="HeadquartersSystem/NinePatchPanel2/ButtonHolder/CenterContainer/Control/Comply" to="HeadquartersSystem" method="_on_comply_pressed_animation_finished"]
-[connection signal="pressed_animation_finished" from="HeadquartersSystem/NinePatchPanel2/ButtonHolder/CenterContainer2/Control2/Resist" to="HeadquartersSystem" method="_on_resist_pressed_animation_finished"]

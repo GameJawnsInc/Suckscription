@@ -8,7 +8,7 @@ signal transition_shown
 @export var map_system: MapSystem
 @export var house_system: HouseSystem
 @export var player_system: PlayerSystem
-
+@export var product_system: ProductSystem
 
 @onready var transition: ColorRect = %Transition
 
@@ -30,6 +30,8 @@ func new_game() -> void:
 	do_game_loop()
 
 func do_game_loop() -> void:
+	if progress_system.current_day == 3:
+		AudioGlob.switch()
 	headquarters_system.begin_day()
 	await headquarters_system.headquarters_accepted
 	map_system.load_overworld()
@@ -51,3 +53,9 @@ func show_transition() -> void:
 	t_2.tween_property(transition, "modulate", Color(0, 0, 0, 0), 0.3)
 	await t_2.finished
 	transition.visible = false
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("speed_down"):
+		Engine.time_scale /= 2
+	if Input.is_action_just_pressed("speed_up"):
+		Engine.time_scale *= 2

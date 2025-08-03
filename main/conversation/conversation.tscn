@@ -1,0 +1,319 @@
+[gd_scene load_steps=6 format=3 uid="uid://uf3oblrgxpwk"]
+
+[ext_resource type="PackedScene" uid="uid://cmuvm085e1ahy" path="res://main/ui/nine_patch_panel/nine_patch_panel.tscn" id="1_lduaa"]
+[ext_resource type="Script" uid="uid://8sc47lmsvmg1" path="res://main/conversation/conversation.gd" id="1_utny7"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://b36j8sb7r01g" path="res://assets/conversation/resident.tres" id="3_utny7"]
+[ext_resource type="PackedScene" uid="uid://ccaxx8d4y6wvp" path="res://main/ui/nine_patch_button/nine_patch_button.tscn" id="4_6fq0t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lduaa"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[node name="Conversation" type="Control"]
+custom_minimum_size = Vector2(1408, 792)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_utny7")
+
+[node name="NinePatchPanel" parent="." instance=ExtResource("1_lduaa")]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -6.0
+offset_right = 1412.0
+offset_bottom = 796.0
+color_choice = 11
+
+[node name="Resident" type="SpineSprite" parent="."]
+unique_name_in_owner = true
+position = Vector2(210, 659)
+scale = Vector2(0.8, 0.8)
+skeleton_data_res = ExtResource("3_utny7")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0
+
+[node name="ApproachPanel" parent="." instance=ExtResource("1_lduaa")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 425.0
+offset_top = 25.0
+offset_right = 1375.0
+offset_bottom = 398.0
+color_choice = 9
+
+[node name="Label" type="RichTextLabel" parent="ApproachPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_outline_size = 100
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Get out there and sell my products. Recruit these gnaves into my coven."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonHolder" type="HBoxContainer" parent="ApproachPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -9.0
+offset_bottom = 389.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="ApproachPanel/ButtonHolder"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="ApproachPanel/ButtonHolder/CenterContainer"]
+layout_mode = 2
+
+[node name="Button1" parent="ApproachPanel/ButtonHolder/CenterContainer/Control" instance=ExtResource("4_6fq0t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -80.0
+offset_right = 150.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(175, 80)
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lduaa")
+text = "CONSIDER IT DONE,   MY LORD"
+disable_on_pressed = true
+color_choice = 6
+
+[node name="CenterContainer2" type="CenterContainer" parent="ApproachPanel/ButtonHolder"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="ApproachPanel/ButtonHolder/CenterContainer2"]
+layout_mode = 2
+
+[node name="Button2" parent="ApproachPanel/ButtonHolder/CenterContainer2/Control2" instance=ExtResource("4_6fq0t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -80.0
+offset_right = 150.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(175, 80)
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lduaa")
+text = "THEY'RE NOT GNAVES, THEY'RE NICE PEOPLE."
+disable_on_pressed = true
+color_choice = 5
+
+[node name="CenterContainer3" type="CenterContainer" parent="ApproachPanel/ButtonHolder"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="ApproachPanel/ButtonHolder/CenterContainer3"]
+layout_mode = 2
+
+[node name="Button3" parent="ApproachPanel/ButtonHolder/CenterContainer3/Control2" instance=ExtResource("4_6fq0t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -80.0
+offset_right = 150.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(175, 80)
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lduaa")
+text = "THEY'RE NOT GNAVES, THEY'RE NICE PEOPLE."
+disable_on_pressed = true
+color_choice = 10
+
+[node name="InventoryPanel" parent="." instance=ExtResource("1_lduaa")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 461.0
+offset_top = 130.0
+offset_right = 1374.0
+offset_bottom = 740.0
+color_choice = 9
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="VBoxContainer" parent="InventoryPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Inventory1" parent="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer" instance=ExtResource("4_6fq0t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+disable_on_pressed = true
+
+[node name="Inventory2" parent="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer" instance=ExtResource("4_6fq0t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+disable_on_pressed = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="InventoryPanel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Inventory3" parent="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer2" instance=ExtResource("4_6fq0t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+disable_on_pressed = true
+
+[node name="Inventory4" parent="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer2" instance=ExtResource("4_6fq0t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+disable_on_pressed = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InventoryPanel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -117.0
+offset_right = 909.0
+offset_bottom = -4.0
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "Select A Product to Pitch"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResponsePanel" parent="." instance=ExtResource("1_lduaa")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 464.0
+offset_top = 41.0
+offset_right = 1369.0
+offset_bottom = 549.0
+color_choice = 9
+
+[node name="NextHolder" type="HBoxContainer" parent="ResponsePanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CenterContainer2" type="CenterContainer" parent="ResponsePanel/NextHolder"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="ResponsePanel/NextHolder/CenterContainer2"]
+layout_mode = 2
+
+[node name="LeaveButton" parent="ResponsePanel/NextHolder/CenterContainer2/Control2" instance=ExtResource("4_6fq0t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 220)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -80.0
+offset_right = 175.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(175, 80)
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 84
+text = "LEAVE"
+disable_on_pressed = true
+color_choice = 6
+
+[node name="ResponseLabel" type="RichTextLabel" parent="ResponsePanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "restsgsdgs sfhdg hd gh xgh rthsr th yfh "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed_animation_finished" from="ApproachPanel/ButtonHolder/CenterContainer/Control/Button1" to="." method="_on_button_1_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="ApproachPanel/ButtonHolder/CenterContainer2/Control2/Button2" to="." method="_on_button_2_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="ApproachPanel/ButtonHolder/CenterContainer3/Control2/Button3" to="." method="_on_button_2_pressed_animation_finished"]
+[connection signal="pressed" from="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer/Inventory1" to="." method="_on_inventory_1_pressed"]
+[connection signal="pressed_animation_finished" from="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer/Inventory1" to="." method="_on_inventory_1_pressed_animation_finished"]
+[connection signal="pressed" from="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer/Inventory2" to="." method="_on_inventory_2_pressed"]
+[connection signal="pressed_animation_finished" from="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer/Inventory2" to="." method="_on_inventory_2_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer2/Inventory3" to="." method="_on_inventory_3_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="InventoryPanel/MarginContainer/HBoxContainer/HBoxContainer2/Inventory4" to="." method="_on_inventory_4_pressed_animation_finished"]
+[connection signal="pressed_animation_finished" from="ResponsePanel/NextHolder/CenterContainer2/Control2/LeaveButton" to="." method="_on_leave_button_pressed_animation_finished"]

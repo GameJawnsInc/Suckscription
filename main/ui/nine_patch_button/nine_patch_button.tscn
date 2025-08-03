@@ -11,6 +11,7 @@ theme_override_font_sizes/font_size = 36
 text = "LETS GO"
 autowrap_mode = 3
 script = ExtResource("1_jcgie")
+disable_on_pressed = null
 panel = NodePath("NinePatchPanel")
 
 [node name="NinePatchPanel" parent="." instance=ExtResource("1_d8od1")]

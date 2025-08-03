@@ -4,7 +4,8 @@ class_name Overworld extends Node2D
 signal start_day_requested
 signal go_pressed
 signal map_completed
-
+signal conversation_started
+signal conversation_ended
 
 const PointInfoScene = preload("overworld_path_point_info.tscn")
 const MoveArrowScene = preload("move_arrow.tscn")
@@ -65,7 +66,7 @@ func house_hovered(house_inst: OverworldHouse) -> void:
 	hover_node.visible = true
 	#hover_node.position = house_inst.global_position
 	hover_label.text = str(house_inst.house.display_name)
-	hover_label_2.text = HouseGlob.get_trait_name(house_inst.house.trait_id)
+	hover_label_2.text = "Relationship: " + str(house_inst.house.relationship)
 
 
 func house_released(_house_inst: OverworldHouse) -> void:
@@ -128,11 +129,18 @@ func player_reached_point(player_inst: PlayerBody) -> void:
 		return
 	#go_button.visible = true
 	#await go_pressed
+	if current_point != 0:
+		conversation_started.emit()
+		var convo_house := HouseGlob.get_sorted_houses_by_property("priority")[current_point - 1]
+		var conversation := ConvoGlob.start_conversation(convo_house.house_id)
+		add_child(conversation)
+		await conversation.completed
+		conversation_ended.emit()
 	var destination := path_line.points[get_next_point()]
 	var house := HouseGlob.get_sorted_houses_by_property("priority")[current_point - 1]
 	var inst := DestinationPanelScene.instantiate()
 	inst.name_string = house.display_name
-	inst.destination_string = HouseGlob.get_trait_name(house.trait_id)
+	inst.destination_string = "Relationship: " + str(house.relationship)
 	add_child(inst)
 	player_inst.set_destination(destination)
 	var move_arrow := MoveArrowScene.instantiate()

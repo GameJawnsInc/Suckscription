@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://reblxtccfsxv"
+path="res://.godot/imported/resident.atlas-559ff0d4cee5eaeb2c96a1207761696e.spatlas"
+
+[deps]
+
+source_file="res://assets/conversation/resident.atlas"
+dest_files=["res://.godot/imported/resident.atlas-559ff0d4cee5eaeb2c96a1207761696e.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

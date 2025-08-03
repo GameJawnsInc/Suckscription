@@ -11,6 +11,10 @@ var max_speed: float = 140.0
 
 var is_movement_disabled: bool = false
 
+
+func _ready() -> void:
+	$SpineSprite.get_animation_state().set_animation("animation", true, 0)
+
 func _physics_process(delta: float) -> void:
 	if is_movement_disabled:
 		velocity = Vector2.ZERO

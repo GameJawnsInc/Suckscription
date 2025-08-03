@@ -5,7 +5,7 @@ signal follow_target_reached
 
 var current_follow_target: Vector2
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if current_follow_target != Vector2.ZERO:
 		target_position = current_follow_target
 		get_next_path_position()

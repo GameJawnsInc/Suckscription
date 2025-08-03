@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://crkaho7202k76"]
+
+[ext_resource type="Script" uid="uid://dhbsqxn0qh6xa" path="res://main/ui/on_off_indicator/on_off_ui_ndicator.gd" id="1_p8x0f"]
+[ext_resource type="Texture2D" uid="uid://c1same2a8vifx" path="res://assets/ui/on_off_indicator/indicator.png" id="2_faibq"]
+
+[node name="OnOffIndicator" type="Control"]
+modulate = Color(0.545098, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1408.0
+offset_bottom = -792.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_p8x0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_faibq")

@@ -7,6 +7,8 @@ const HoverScale = Vector2(1.1, 1.1)
 const PressedScale = Vector2(1.2, 1.2)
 const TweenTime = 0.2
 
+@export var disable_on_pressed: bool = true
+
 @export var panel: NinePatchPanel
 
 @export var color_choice: NinePatchPanel.ColorChoice :
@@ -35,6 +37,8 @@ func _on_mouse_exited() -> void:
 
 
 func _on_pressed() -> void:
+	if disable_on_pressed:
+		UiGlob.disable_button(self)
 	z_index += 1
 	is_doing_pressed_animation = true
 	var t_1 := create_tween()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://l1p4rycssywy" path="res://main/player/player.gd" id="1_ssv3l"]
 [ext_resource type="Script" uid="uid://c8wsix5is55x1" path="res://main/player/player_nav.gd" id="2_4bbr4"]
-[ext_resource type="Texture2D" uid="uid://c74jcs4rogoql" path="res://icon.svg" id="3_l6plr"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://6r5tgsjn3khn" path="res://assets/player/player.tres" id="3_ssv3l"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("navigator")]
 script = ExtResource("1_ssv3l")
@@ -11,6 +11,9 @@ navigator = NodePath("NavigationAgent2D")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 script = ExtResource("2_4bbr4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_l6plr")
+[node name="SpineSprite" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("3_ssv3l")
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0
